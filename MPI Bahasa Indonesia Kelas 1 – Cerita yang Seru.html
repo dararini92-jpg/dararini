@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MPI Bahasa Indonesia Kelas 1 – Cerita yang Seru</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1f2a5c;--sky:#4cc3f0;--sun:#ffc93c;--leaf:#2fb67f;--berry:#ff6b8a;--bg:#eef8ff;--card:#fff;--soft:#dff2ff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Nunito,"Trebuchet MS",system-ui,sans-serif;font-size:19px;color:var(--ink);background:var(--bg);line-height:1.55;overflow-x:hidden}
+h1,h2,h3{font-family:"Baloo 2","Trebuchet MS",system-ui,sans-serif;margin:.2em 0;line-height:1.15}
+h1{font-size:clamp(2.2rem,7vw,4rem)}h2{font-size:1.9rem}h3{font-size:1.3rem}
+.cloud{position:fixed;font-size:3rem;opacity:.5;animation:drift 40s linear infinite;z-index:0;pointer-events:none}
+@keyframes drift{from{transform:translateX(-20vw)}to{transform:translateX(120vw)}}
+header{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;display:flex;gap:.5rem;align-items:center;padding:.5rem 1rem;flex-wrap:wrap}
+header b{font-family:"Baloo 2",sans-serif;font-size:1.1rem;margin-right:auto}
+nav{display:flex;gap:.35rem;flex-wrap:wrap}
+nav button{border:0;border-radius:99px;padding:.35rem .9rem;font:inherit;font-weight:800;background:#fff3;color:#fff;cursor:pointer}
+nav button.on{background:var(--sun);color:var(--ink)}
+#stars{background:var(--sun);color:var(--ink);border-radius:99px;padding:.2rem .8rem;font-weight:800}
+main{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:1rem}
+section{display:none}section.on{display:block;animation:pop .5s ease}
+@keyframes pop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.card{background:var(--card);border-radius:22px;padding:1.1rem 1.3rem;margin:1rem 0;border:3px solid var(--ink);box-shadow:0 6px 0 var(--ink)}
+.tag{display:inline-block;border-radius:99px;padding:.1rem .8rem;font-weight:800;color:#fff;background:var(--leaf)}
+.t2{background:var(--berry)}.t3{background:#7a5af8}.t4{background:var(--sky);color:var(--ink)}
+.hero{text-align:center;padding:1rem 0}
+.mascot{width:150px;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-14px) rotate(3deg)}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.8rem}
+.map button,.big{font:inherit;font-weight:800;border:3px solid var(--ink);border-radius:18px;padding:.8rem;background:var(--sun);color:var(--ink);cursor:pointer;box-shadow:0 4px 0 var(--ink);transition:transform .1s}
+.map button:hover,.big:hover{transform:translateY(-3px)}.big:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.big.g{background:var(--leaf);color:#fff}.big.p{background:var(--berry);color:#fff}.big.s{background:var(--sky)}
+.flip{perspective:600px;height:130px;cursor:pointer}
+.flip div{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.flip.on div{transform:rotateY(180deg)}
+.flip span{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;border:3px solid var(--ink);display:flex;align-items:center;justify-content:center;text-align:center;padding:.6rem;font-weight:800;background:var(--soft)}
+.flip span+span{transform:rotateY(180deg);background:var(--sun)}
+.sim{background:var(--soft)}
+.opt{display:block;width:100%;text-align:left;margin:.4rem 0;font:inherit;font-weight:700;padding:.6rem 1rem;border-radius:14px;border:3px solid var(--ink);background:#fff;cursor:pointer}
+.opt.ok{background:var(--leaf);color:#fff;animation:jump .5s}.opt.no{background:var(--berry);color:#fff;animation:shake .4s}
+@keyframes jump{50%{transform:scale(1.06)}}@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.story{font-size:1.4rem;background:#fff;border-radius:16px;padding:1rem;border:3px dashed var(--sky);transition:filter .4s}
+.story.hide{filter:blur(9px)}
+.w{padding:.05rem .15rem;border-radius:6px;transition:background .2s}.w.hl{background:var(--sun)}
+.fb{min-height:2rem;font-weight:800;margin:.4rem 0}
+.slot{display:inline-block;min-width:2.2rem;text-align:center;border-bottom:4px solid var(--ink);font-size:1.6rem;color:var(--berry);font-weight:800}
+.slot.pop{animation:jump .5s}
+.q{font-size:1.5rem;font-weight:800;margin:.8rem 0}
+select,input,textarea{font:inherit;border:3px solid var(--ink);border-radius:12px;padding:.4rem .7rem;width:100%;background:#fff;color:var(--ink)}
+label{font-weight:800;display:block;margin-top:.5rem}
+.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.5rem}
+.tabs button{font:inherit;font-weight:800;border:3px solid var(--ink);border-radius:99px;padding:.25rem .9rem;background:#fff;cursor:pointer}
+.tabs button.on{background:var(--berry);color:#fff}
+.out{font-size:1.35rem;background:#fff;border-radius:16px;padding:1rem;min-height:4rem;border:3px solid var(--leaf);margin-top:.7rem}
+.disc{background:#fff4d6}
+.roles{display:flex;gap:.4rem;flex-wrap:wrap}.roles span{background:#fff;border:2px solid var(--ink);border-radius:99px;padding:.1rem .7rem;font-weight:800;font-size:.9rem}
+.timer{font-family:"Baloo 2",sans-serif;font-size:2rem}
+.nxt{display:flex;justify-content:space-between;margin:1.5rem 0 3rem}
+.emo{display:flex;gap:.6rem;justify-content:center;font-size:2.6rem}.emo button{font-size:inherit;border:3px solid transparent;background:none;border-radius:50%;cursor:pointer;transition:transform .2s}.emo button:hover{transform:scale(1.25)}.emo button.on{border-color:var(--ink);background:var(--sun)}
+.conf{position:fixed;top:-3rem;font-size:2rem;z-index:99;pointer-events:none;animation:fall 1.8s ease-in forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:4px solid #7a5af8;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ex{background:#fff;border-left:8px solid var(--sky);border-radius:12px;padding:.5rem 1rem;margin:.7rem 0}.ex.y{border-color:var(--sun)}.ex.p{border-color:var(--berry)}.ex.g{border-color:var(--leaf)}.vocab{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0}.vocab span{background:var(--soft);border-radius:12px;padding:.2rem .7rem;font-weight:700}table{border-collapse:collapse;width:100%;background:#fff}td,th{border:2px solid var(--ink);padding:.35rem .6rem;text-align:left}th{background:var(--sun)}h4{margin:.8rem 0 .2rem;font-size:1.1rem}</style>
+</head>
+<body>
+<div class="cloud" style="top:12%">☁️</div><div class="cloud" style="top:55%;animation-delay:-20s">☁️</div>
+<header><b>📖 MPI Bahasa Indonesia Kelas 1</b><nav id="nav"></nav><span id="stars">⭐ 0</span></header>
+<main>
+
+<section id="s0" class="on">
+<div class="hero">
+<svg class="mascot" viewBox="0 0 120 110" aria-label="Maskot buku"><rect x="10" y="20" width="100" height="80" rx="14" fill="#4cc3f0" stroke="#1f2a5c" stroke-width="5"/><rect x="22" y="30" width="76" height="60" rx="10" fill="#fff"/><circle cx="45" cy="55" r="7" fill="#1f2a5c"/><circle cx="75" cy="55" r="7" fill="#1f2a5c"/><path d="M45 72q15 14 30 0" stroke="#ff6b8a" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M30 20l-8-14M90 20l8-14" stroke="#1f2a5c" stroke-width="5" stroke-linecap="round"/></svg>
+<p><span class="tag">BAB 2</span></p>
+<h1>Cerita yang Seru</h1>
+<p>Media Pembelajaran Interaktif · Bahasa Indonesia SD/MI Kelas I</p>
+<button class="big g" data-go="1">Ayo mulai belajar!</button>
+</div>
+<div class="card"><h2>Tujuan Pembelajaran</h2>
+<p>Setelah belajar, kamu dapat:</p>
+<ul><li>menemukan kata baru dan hal penting dari cerita anak;</li><li>menjawab pertanyaan tentang diri, keluarga, atau lingkungan;</li><li>menulis tanda tanya dan tanda seru;</li><li>menceritakan kembali isi cerita anak;</li><li>menulis cerita anak dengan kalimat sederhana.</li></ul></div>
+<div class="card"><h2>Peta Konsep</h2>
+<div class="grid map"><button data-go="1">A. Mengenali Cerita Anak</button><button data-go="2">B. Mengenali Tanda Tanya dan Seru</button><button data-go="3">C. Menceritakan Kembali Isi Cerita Anak</button><button data-go="4">D. Menulis Cerita Anak</button></div></div>
+<div class="card"><h2>Cara Belajar Kita</h2>
+<div class="grid"><div><span class="tag">Berkesadaran</span><p>Menyimak dan memahami dengan sungguh-sungguh.</p></div><div><span class="tag t2">Bermakna</span><p>Cerita berasal dari dirimu, keluargamu, dan lingkunganmu.</p></div><div><span class="tag t3">Menggembirakan</span><p>Bermain, bergerak, dan berdiskusi bersama teman.</p></div></div>
+<p><b>Alur tiap bab:</b> 1) Pahami → 2) Coba → 3) Diskusi → 4) Renungkan.</p></div>
+</section>
+
+<section id="s1">
+<h2><span class="tag">A</span> Mengenali Cerita Anak</h2>
+<div class="card"><h3>1) Pahami</h3>
+<p><b>Cerita anak</b> adalah cerita sederhana untuk anak-anak. <b>Menyimak</b> adalah mendengarkan dengan baik. Ketuk kartu untuk membukanya!</p>
+<div class="grid" id="fl-simak"></div>
+<h4>📚 Ciri cerita anak</h4>
+<ul><li>Ceritanya <b>pendek dan sederhana</b>, kata-katanya mudah dipahami.</li><li>Ada <b>tokoh</b> (siapa), <b>tempat</b> (di mana), dan <b>kejadian</b> (apa yang terjadi).</li><li>Sering membawa pesan baik, misalnya berbagi dan rajin.</li><li>Bisa tentang hewan, diri sendiri, keluarga, atau lingkungan.</li></ul>
+<div class="ex"><b>Contoh:</b> <u>Kiki si kelinci</u> (tokoh) pergi ke <u>kebun</u> (tempat). Di sana Kiki <u>bertemu Beni dan makan wortel bersama</u> (kejadian).</div>
+<h4>👂 Menyimak cerita anak</h4>
+<div class="grid"><div class="ex y"><b>Sebelum</b><br>Siapkan diri, diam, dan duduk rapi.</div><div class="ex y"><b>Saat</b><br>Dengarkan suara, bayangkan cerita, ingat tokoh, tempat, kejadian.</div><div class="ex y"><b>Sesudah</b><br>Jawab pertanyaan dan ceritakan hal penting yang kamu ingat.</div></div>
+<p>Menyimak berbeda dari sekadar <i>mendengar</i>. Saat menyimak, kita <b>memperhatikan</b> dan <b>memikirkan</b> isinya.</p>
+<h4>📖 Membaca cerita anak</h4>
+<p><b>Membaca</b> berarti mengeja tulisan. Hal penting saat membaca:</p>
+<ul><li>Tidak terlalu cepat atau lambat.</li><li>Mengucapkan huruf dan kata dengan benar.</li><li>Memahami makna kata. Jika ada kata baru, tanyakan kepada guru atau teman.</li></ul>
+<table><tr><th>Membaca lantang</th><th>Membaca dalam hati</th></tr><tr><td>Bersuara keras, orang lain dapat mendengar.</td><td>Tanpa suara, hanya dalam pikiran.</td></tr><tr><td>Cocok: membacakan cerita untuk teman atau adik.</td><td>Cocok: membaca sendiri di perpustakaan.</td></tr></table>
+<h4>🔤 Kata baru</h4>
+<div class="vocab"><span>menyimak = mendengarkan dengan baik</span><span>tokoh = pelaku dalam cerita</span><span>lantang = bersuara keras</span><span>mengeja = menyebut huruf satu per satu</span><span>makna = arti</span></div></div>
+<div class="card sim"><h3>2) Coba: Simak Cerita</h3>
+<p>Tekan tombol, lalu dengarkan dengan baik. Ingat tokoh, tempat, dan kejadiannya!</p>
+<div class="story" id="st1"></div>
+<p><button class="big s" data-say="st1">🔊 Dengarkan cerita</button></p>
+<div id="qz1"></div></div>
+<div class="card sim"><h3>Coba: Dua Cara Membaca</h3>
+<p><b>Membaca lantang</b>: bersuara keras, orang lain mendengar. <b>Membaca dalam hati</b>: tanpa suara, hanya dalam pikiran.</p>
+<div class="story" id="rd"></div>
+<label>Kecepatan membaca: <span id="spv">5</span></label><input type="range" id="sp" min="1" max="10" value="5">
+<p><button class="big g" id="rdL">📢 Baca lantang</button> <button class="big p" id="rdH">🤫 Baca dalam hati</button></p>
+<div class="fb" id="rdfb"></div></div>
+<div class="card disc" data-d="Cerita anak apa yang kamu suka? Mengapa?|Apa yang kamu lakukan agar bisa menyimak dengan baik?|Mengapa membaca tidak boleh terlalu cepat?"></div>
+</section>
+
+<section id="s2">
+<h2><span class="tag t2">B</span> Mengenali Tanda Tanya dan Tanda Seru</h2>
+<div class="card"><h3>1) Pahami</h3>
+<div class="grid"><div><p style="font-size:3rem;margin:0;color:var(--sky)"><b>?</b></p><p><b>Tanda tanya</b> untuk bertanya tentang suatu hal.<br><i>Mau beli apa, Kak?</i></p></div><div><p style="font-size:3rem;margin:0;color:var(--berry)"><b>!</b></p><p><b>Tanda seru</b> untuk menunjukkan rasa senang, terkejut, dan semangat.<br><i>Kuenya enak sekali, Bu!</i></p></div></div>
+<h4>🔎 Cara memakai tanda</h4>
+<ul><li>Tanda tanya dan tanda seru ditulis di <b>akhir kalimat</b>.</li><li>Awal kalimat memakai <b>huruf kapital</b>.</li><li>Kalimat yang bertanya memakai kata tanya: <b>apa, siapa, di mana, kapan, mengapa, bagaimana</b>.</li><li>Kalimat seru sering diawali kata seru: <b>wah, hore, aduh</b>.</li></ul>
+<table><tr><th>Jenis</th><th>Contoh</th><th>Cara membaca</th></tr><tr><td>Tanda tanya (?)</td><td>Siapa namamu?</td><td>Nada naik di akhir, seperti bertanya.</td></tr><tr><td>Tanda tanya (?)</td><td>Kamu tinggal di mana?</td><td>Nada naik di akhir.</td></tr><tr><td>Tanda seru (!)</td><td>Hore, kita menang!</td><td>Suara bersemangat.</td></tr><tr><td>Tanda seru (!)</td><td>Wah, bonekanya bagus sekali!</td><td>Suara senang dan terkejut.</td></tr></table>
+<div class="ex p"><b>Bandingkan:</b> “Kamu datang?” (bertanya) dan “Kamu datang!” (senang). Tandanya berbeda, maksudnya juga berbeda.</div>
+<div class="vocab"><span>tanya = meminta jawaban</span><span>seru = ungkapan senang, terkejut, semangat</span></div></div>
+<div class="card sim"><h3>2) Coba: Pabrik Tanda</h3>
+<p>Pilih tanda yang tepat di akhir kalimat.</p>
+<div class="q" id="pq"></div>
+<p><button class="big s" data-p="?">❓ Tanda tanya</button> <button class="big p" data-p="!">❗ Tanda seru</button></p>
+<div class="fb" id="pfb"></div></div>
+<div class="card disc" data-d="Tanyakan satu hal kepada temanmu. Tanda apa yang kamu pakai?|Katakan satu kalimat yang menunjukkan rasa senang. Tanda apa yang kamu pakai?|Mengapa suara kita berbeda saat membaca kalimat tanya dan kalimat seru?"></div>
+</section>
+
+<section id="s3">
+<h2><span class="tag t3">C</span> Menceritakan Kembali Isi Cerita Anak</h2>
+<div class="card"><h3>1) Pahami</h3>
+<p>Agar mudah menceritakan kembali, ingatlah:</p>
+<div class="grid" id="fl-ing"></div>
+<p>Gunakan kalimat sederhana.</p>
+<h4>🪜 Langkah menceritakan kembali</h4>
+<ol><li><b>Simak atau baca</b> cerita sampai selesai.</li><li><b>Ingat</b> tokoh, tempat, dan kegiatan.</li><li><b>Susun</b> kalimat dalam urutan kejadian.</li><li><b>Ceritakan</b> dengan suara jelas dan kata-katamu sendiri.</li></ol>
+<div class="ex g"><b>Contoh dari cerita Kiki:</b><br>Tokoh: Kiki dan Beni. Tempat: kebun. Kegiatan: makan wortel.<br><i>“Kiki pergi ke kebun. Kiki bertemu Beni. Mereka makan wortel bersama.”</i></div>
+<h4>🔗 Kata penunjuk urutan</h4>
+<div class="vocab"><span>pertama</span><span>lalu</span><span>kemudian</span><span>akhirnya</span></div>
+<p><b>Ingat:</b> menceritakan kembali berarti menyampaikan isi cerita yang sama, tanpa mengubah tokoh dan kejadiannya. Tidak perlu persis sama kata-katanya.</p></div>
+<div class="card sim"><h3>2) Coba: Kotak Ingatan</h3>
+<div class="story" id="st2"></div>
+<p><button class="big s" data-say="st2">🔊 Dengarkan</button> <button class="big g" id="hideSt">🙈 Tutup cerita</button></p>
+<label>Siapa tokohnya?</label><select id="c1"><option value="">– pilih –</option><option>Ani dan Ibu</option><option>Pak Guru</option><option>Kakek</option></select>
+<label>Di mana tempatnya?</label><select id="c2"><option value="">– pilih –</option><option>sekolah</option><option>pasar</option><option>sawah</option></select>
+<label>Apa kegiatannya?</label><select id="c3"><option value="">– pilih –</option><option>bermain bola</option><option>membeli sayur</option><option>membaca buku</option></select>
+<p><button class="big p" id="ck">Ceritakan kembali!</button></p>
+<div class="out" id="o2"></div></div>
+<div class="card disc" data-d="Ceritakan kembali cerita favoritmu kepada kelompok.|Siapa tokohnya? Di mana tempatnya? Apa kegiatannya?|Siapa yang bercerita paling jelas? Apa yang membuatnya jelas?"></div>
+</section>
+
+<section id="s4">
+<h2><span class="tag t4">D</span> Menulis Cerita Anak</h2>
+<div class="card"><h3>1) Pahami</h3>
+<p>Kamu dapat menulis tentang <b>dirimu</b>, <b>hobi</b>, <b>kegiatan sehari-hari</b>, dan <b>keluargamu</b>.</p>
+<div class="grid"><div>🙋 Menulis cerita membuatmu <b>belajar bercerita</b>.</div><div>💛 <b>Temanmu tahu</b> hal yang kamu suka.</div><div>🪞 Kamu <b>lebih mengenal diri sendiri</b>.</div></div>
+<h4>💡 Apa yang bisa kamu tulis?</h4>
+<table><tr><th>Topik</th><th>Ide isi cerita</th></tr><tr><td>Cerita tentang dirimu</td><td>Nama lengkap, nama panggilan, umur, tempat tinggal</td></tr><tr><td>Hobi</td><td>Waktu melakukan hobi, teman bermain, tempat bermain, perasaan saat bermain</td></tr><tr><td>Kegiatan sehari-hari</td><td>Bangun tidur, pergi ke sekolah, belajar di sekolah, bermain di rumah</td></tr><tr><td>Keluargamu</td><td>Ayah dan ibu, kakak atau adik, jumlah anggota keluarga, kegiatan bersama</td></tr></table>
+<h4>🪜 Langkah menulis cerita</h4>
+<ol><li><b>Pilih</b> topik yang ingin kamu ceritakan.</li><li><b>Ingat</b> hal penting: siapa, di mana, dan apa yang terjadi.</li><li><b>Tulis</b> beberapa kalimat sederhana, satu ide untuk satu kalimat.</li><li><b>Periksa</b>: huruf kapital di awal kalimat, tanda titik, tanda tanya, atau tanda seru di akhir.</li><li><b>Bacakan</b> ceritamu kepada teman.</li></ol>
+<div class="ex g"><b>Contoh cerita tentang keluarga:</b><br>Ayah dan ibuku bernama Pak Budi dan Bu Sari. Aku punya satu adik. Keluargaku ada empat orang. Kami suka makan bersama. Aku senang sekali!</div>
+<div class="ex y"><b>Kalimat pembuka:</b> Namaku…, Hobiku…, Setiap pagi aku…<br><b>Kalimat penutup:</b> Aku senang sekali!, Itulah ceritaku.</div></div>
+<div class="card sim"><h3>2) Coba: Penyusun Cerita</h3>
+<div class="tabs" id="tb"></div><div id="fm"></div>
+<p><button class="big g" id="wr">✍️ Tulis ceritaku</button> <button class="big s" data-say="o4">🔊 Bacakan</button></p>
+<div class="out" id="o4"></div></div>
+<div class="card disc" data-d="Tukarkan ceritamu dengan teman. Apa yang baru kamu ketahui tentangnya?|Apa yang bisa ditambah supaya ceritanya lebih seru?|Apakah tanda tanya dan tanda seru sudah dipakai dengan tepat?"></div>
+</section>
+
+<section id="s5">
+<div class="hero"><h1>Hebat!</h1><p>Kamu sudah menyelesaikan Bab 2.</p><p style="font-size:3rem" id="fs">⭐</p></div>
+<div class="card"><h3>4) Renungkan</h3>
+<p><b>Bagaimana perasaanmu belajar hari ini?</b></p>
+<div class="emo" id="emo"><button>😀</button><button>🙂</button><button>😐</button><button>😢</button></div>
+<label>Hal baru yang kupelajari:</label><textarea rows="2" placeholder="Aku belajar bahwa…"></textarea>
+<label>Ceritaku akan kuceritakan kepada:</label><input placeholder="Ayah / Ibu / Kakak / Teman">
+<p class="fb" id="rf"></p></div>
+<div class="card"><h3>Catatan untuk Guru</h3>
+<p>Pendekatan pembelajaran mendalam: <b>memahami</b> (materi dan kartu), <b>mengaplikasi</b> (simulasi), <b>merefleksi</b> (diskusi dan renungan). Diskusi kelompok 3–4 murid dengan peran ketua, pencatat, pelapor, dan penjaga waktu. Fitur bacakan memakai suara Bahasa Indonesia dari peramban.</p></div>
+<p style="text-align:center">Terima kasih! Sampai jumpa di pembelajaran selanjutnya! 👋</p>
+</section>
+
+<div class="nxt"><button class="big" id="pv">◀ Kembali</button><button class="big g" id="nx">Lanjut ▶</button></div>
+</main>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const names=['Mulai','A','B','C','D','Akhir'];let cur=0,stars=0;const done={};
+function star(k){if(done[k])return;done[k]=1;stars++;$('#stars').textContent='⭐ '+stars;$('#fs').textContent='⭐'.repeat(stars);boom()}
+function boom(){for(let i=0;i<14;i++){const e=document.createElement('span');e.className='conf';e.textContent=['⭐','🎉','✨','🌟'][i%4];e.style.left=Math.random()*100+'vw';e.style.animationDelay=Math.random()*.5+'s';document.body.append(e);setTimeout(()=>e.remove(),2500)}}
+function say(t,r=.85){if(!('speechSynthesis' in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='id-ID';u.rate=r;speechSynthesis.speak(u)}
+function go(n){cur=Math.max(0,Math.min(5,n));$$('section').forEach((s,i)=>s.classList.toggle('on',i===cur));$$('#nav button').forEach((b,i)=>b.classList.toggle('on',i===cur));$('#pv').style.visibility=cur?'visible':'hidden';$('#nx').style.visibility=cur<5?'visible':'hidden';speechSynthesis&&speechSynthesis.cancel();scrollTo({top:0,behavior:'smooth'})}
+names.forEach((n,i)=>{const b=document.createElement('button');b.textContent=n;b.onclick=()=>go(i);$('#nav').append(b)});
+document.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g)go(+g.dataset.go);const s=e.target.closest('[data-say]');if(s)say($('#'+s.dataset.say).textContent)});
+$('#pv').onclick=()=>go(cur-1);$('#nx').onclick=()=>go(cur+1);
+
+function flips(id,arr){$(id).innerHTML=arr.map(a=>`<div class="flip" tabindex="0"><div><span>${a[0]}</span><span>${a[1]}</span></div></div>`).join('');$$(id+' .flip').forEach(f=>{f.onclick=()=>f.classList.toggle('on');f.onkeydown=e=>{if(e.key==='Enter')f.click()}})}
+flips('#fl-simak',[['👂 Perhatikan suara','Perhatikan suara orang yang bercerita.'],['💭 Bayangkan','Bayangkan isi cerita di kepalamu.'],['🧠 Ingat','Ingatlah tokoh, tempat, dan kejadian.'],['🪑 Duduk rapi','Duduklah dengan rapi.']]);
+flips('#fl-ing',[['🐰 Tokoh','Ingatlah tokoh dalam cerita.'],['🏡 Tempat','Ingatlah tempat terjadinya cerita.'],['🏃 Kegiatan','Ingatlah kegiatan tokoh.']]);
+
+function quiz(id,qs,key){let i=0,ok=0;const el=$(id);(function show(){if(i>=qs.length){el.innerHTML=`<p class="fb">Selesai! Benar ${ok} dari ${qs.length} 🎉</p>`;if(ok>=qs.length-1)star(key);return}const q=qs[i];el.innerHTML=`<p class="q">${q.q}</p>`+q.o.map((o,j)=>`<button class="opt" data-j="${j}">${o}</button>`).join('');$$(id+' .opt').forEach(b=>b.onclick=()=>{const j=+b.dataset.j;if(j===q.a){b.classList.add('ok');ok+=(b.dataset.t?0:1);say('Benar',1);setTimeout(()=>{i++;show()},800)}else{b.classList.add('no');b.dataset.t=1}})})()}
+$('#st1').textContent='Kiki si kelinci suka makan wortel. Pagi itu Kiki pergi ke kebun. Di kebun, Kiki bertemu Beni si burung. Mereka makan wortel bersama. Kiki sangat senang!';
+quiz('#qz1',[{q:'Siapa tokoh dalam cerita?',o:['Kiki dan Beni','Ani dan Ibu','Pak Guru'],a:0},{q:'Di mana tempat kejadiannya?',o:['sekolah','kebun','pasar'],a:1},{q:'Apa yang dimakan Kiki dan Beni?',o:['kue','nasi','wortel'],a:2}],'q1');
+
+const rt='Cerita tentang murid yang rajin.';$('#rd').innerHTML=rt.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');
+$('#sp').oninput=e=>$('#spv').textContent=e.target.value;
+function read(loud){const s=+$('#sp').value,ws=$$('#rd .w');let k=0;ws.forEach(w=>w.classList.remove('hl'));$('#rdfb').textContent='';if(loud)say(rt,.4+s*.1);const t=setInterval(()=>{ws.forEach(w=>w.classList.remove('hl'));if(k>=ws.length){clearInterval(t);const m=s<=3?'Terlalu lambat. Coba lebih cepat sedikit! 🐢':s>=8?'Terlalu cepat. Pelan-pelan saja! 🐇':'Pas! Tidak terlalu cepat atau lambat 🎉';$('#rdfb').textContent=(loud?'Membaca lantang: ':'Membaca dalam hati: ')+m;if(s>3&&s<8)star('rd');return}ws[k++].classList.add('hl')},1400-s*120)}
+$('#rdL').onclick=()=>read(1);$('#rdH').onclick=()=>read(0);
+
+const P=[['Mau beli apa, Kak','?'],['Kuenya enak sekali, Bu','!'],['Siapa namamu','?'],['Wah, bonekanya bagus sekali','!'],['Kamu tinggal di mana','?'],['Hore, kita menang','!']];let pi=0,pk=0;
+function pshow(){if(pi>=P.length){$('#pq').textContent='Hebat! Skor: '+pk+'/'+P.length;$('#pfb').textContent='';if(pk>=5)star('p');return}$('#pq').innerHTML=P[pi][0]+'<span class="slot">&nbsp;</span>'}
+pshow();$$('[data-p]').forEach(b=>b.onclick=()=>{if(pi>=P.length){pi=0;pk=0;pshow();return}const r=b.dataset.p===P[pi][1];const sl=$('#pq .slot');sl.textContent=P[pi][1];sl.classList.add('pop');$('#pfb').textContent=r?'Benar! 🎉':'Belum tepat. Jawaban: '+P[pi][1];if(r)pk++;setTimeout(()=>{pi++;pshow();if(pi<P.length)$('#pfb').textContent=''},1100)});
+
+$('#st2').textContent='Ani dan Ibu pergi ke pasar. Ani membantu Ibu membeli sayur.';
+$('#hideSt').onclick=()=>{$('#st2').classList.toggle('hide');$('#hideSt').textContent=$('#st2').classList.contains('hide')?'👀 Buka cerita':'🙈 Tutup cerita'};
+$('#ck').onclick=()=>{const a=$('#c1').value,b=$('#c2').value,c=$('#c3').value,o=$('#o2');if(!a||!b||!c){o.textContent='Pilih tokoh, tempat, dan kegiatan dulu ya!';return}o.textContent=`${a} pergi ke ${b}. Mereka ${c}.`;if(a==='Ani dan Ibu'&&b==='pasar'&&c==='membeli sayur'){o.textContent+=' ✅ Ceritamu benar!';star('c');say(o.textContent)}else o.textContent+=' 🤔 Coba simak lagi cerita di atas.'};
+
+const T={'Diriku':[['Nama lengkapmu',''],['Nama panggilanmu',''],['Umurmu (angka)',''],['Tempat tinggalmu','']],'Hobi':[['Hobimu',''],['Teman bermain',''],['Tempat bermain',''],['Perasaanmu saat bermain','']],'Kegiatan':[['Bangun tidur pukul',''],['Pergi ke sekolah dengan',''],['Belajar apa di sekolah',''],['Bermain apa di rumah','']],'Keluarga':[['Nama ayah dan ibu',''],['Kakak atau adik',''],['Jumlah anggota keluarga',''],['Kegiatan bersama','']]};
+const F={'Diriku':v=>`Namaku ${v[0]}. Aku biasa dipanggil ${v[1]}. Umurku ${v[2]} tahun. Aku tinggal di ${v[3]}.`,'Hobi':v=>`Hobiku adalah ${v[0]}. Aku bermain bersama ${v[1]}. Kami bermain di ${v[2]}. Aku merasa ${v[3]}!`,'Kegiatan':v=>`Aku bangun tidur pukul ${v[0]}. Aku pergi ke sekolah dengan ${v[1]}. Di sekolah aku belajar ${v[2]}. Di rumah aku bermain ${v[3]}.`,'Keluarga':v=>`Ayah dan ibuku bernama ${v[0]}. Aku punya ${v[1]}. Keluargaku ada ${v[2]} orang. Kami suka ${v[3]} bersama.`};
+let tp='Diriku',tm;
+function tab(n){tp=n;$$('#tb button').forEach(b=>b.classList.toggle('on',b.textContent===n));$('#fm').innerHTML=T[n].map((f,i)=>`<label>${f[0]}</label><input data-i="${i}">`).join('');$('#o4').textContent=''}
+Object.keys(T).forEach(n=>{const b=document.createElement('button');b.textContent=n;b.onclick=()=>tab(n);$('#tb').append(b)});tab('Diriku');
+$('#wr').onclick=()=>{const v=$$('#fm input').map(i=>i.value.trim());if(v.some(x=>!x)){$('#o4').textContent='Isi semua kotak dulu ya!';return}const t=F[tp](v),o=$('#o4');o.textContent='';clearInterval(tm);let k=0;tm=setInterval(()=>{o.textContent=t.slice(0,++k);if(k>=t.length){clearInterval(tm);star('d')}},35)};
+
+$$('.disc').forEach((d,n)=>{const q=d.dataset.d.split('|');d.innerHTML=`<h3>3) Diskusi Kelompok</h3><div class="roles"><span>👑 Ketua</span><span>✏️ Pencatat</span><span>📣 Pelapor</span><span>⏱️ Penjaga waktu</span></div><ol>${q.map(x=>`<li>${x}</li>`).join('')}</ol><p>Waktu diskusi: <span class="timer">3:00</span> <button class="big s">▶ Mulai</button></p><textarea rows="2" placeholder="Catatan kelompok…"></textarea><label><input type="checkbox" style="width:auto"> Semua anggota sudah berbicara</label><label><input type="checkbox" style="width:auto"> Kelompok sepakat dan siap melapor</label>`;let t=180,iv;const tm=d.querySelector('.timer'),bt=d.querySelector('button');bt.onclick=()=>{clearInterval(iv);t=180;bt.textContent='🔁 Ulangi';iv=setInterval(()=>{t--;tm.textContent=Math.floor(t/60)+':'+String(t%60).padStart(2,'0');if(t<=0){clearInterval(iv);tm.textContent='Selesai! 🔔';star('disc'+n)}},1000)}});
+$$('#emo button').forEach(b=>b.onclick=()=>{$$('#emo button').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#rf').textContent='Terima kasih sudah berbagi perasaanmu! 💛';star('emo')});
+go(0);
+</script>
+</body>
+</html>
